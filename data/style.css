@@ -1,0 +1,28 @@
+p {
+    color: red;
+    position: absolute;
+    top: 50%;
+    margin: -25px 0 0 -25px; /* apply negative top and left margins to truly center the element */
+}
+
+#card {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 25px;
+    background: #2668e4;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80vw;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ins-cont {
+    flex: 0 0 520px;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel = "stylesheet"
+        type = "text/css"
+        href = "test.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="header"><h1 id="headerText">Hi Im A Big Header</h1></div>
+    <img src="float-header.webp" alt="Floating Header Background" id="floatingHeaderImage"/>
+    <div id="main-page" >
+        <div id="tilesFlex">
+
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+            <div class="Tile round" style="background-color:mediumaquamarine;">
+                <div class="TileImg visible round" onclick="go()" >
+                    <img class="round" src="wood.jpg" width="100%" />
+    
+                </div>
+                <div class="TileContent hidden gone round">
+                    <p>Overdrive</p> 
+                    <img class="backButton" src="back.svg" alt="Back" width="50px" onclick="go()" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function setup() {
+            
+            // this breakes reflow
+            // we should convert on click then animate
+
+            var elements = document.querySelectorAll(".Tile");
+            let positsx = []
+            let positsy = []
+            Array.prototype.forEach.call(elements, function(el, i){
+                positsx[i] = el.offsetLeft
+                positsy[i] = el.offsetTop
+                // let cssNow = {
+                //     "position": "absolute",
+                //     "top": el.offsetTop+"px",
+                //     "left": el.offsetLeft+"px"
+                // }
+                // el.style.position = "absolute"
+                // el.style.position = "absolute"
+            });
+            Array.prototype.forEach.call(elements, function(el, i){
+                el.style.position = "absolute"
+                el.style.top = positsy[i]+"px"
+                el.style.left = positsx[i]+"px"
+            });
+            
+        }
+        setup()
+
+        let on = false
+        function go() {
+            on = !on
+            /*
+            // For each might work here
+            ov.className = on ? "top round" : "none round"
+
+            contt.className = on ? "Content visible round" : "hidden round"
+            im.className = on ? "hidden round" : "visible round"
+
+            let f = on ? im : contt
+            setTimeout(() => {  f.className += "gone" }, 250);
+            */
+        }
+    </script>
+</body>
+</html>
