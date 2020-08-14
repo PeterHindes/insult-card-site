@@ -96,7 +96,7 @@ body{
 }
 
 #im:hover, #im:focus, #im:active {
-
+    filter: brightness(50%)
 }
 
 
