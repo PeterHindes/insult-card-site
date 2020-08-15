@@ -1,7 +1,14 @@
 
-body{
+:root {
+    --backg-col: lavender;
+    --text-col: midnightblue;
+}
+
+body {
     margin: 0px;
     padding: 0px;
+
+    overflow-x: hidden;
 }
 
 #header {
@@ -11,14 +18,59 @@ body{
     position: sticky;
     z-index: 1;
     top: 0;
+    left: 0;
     margin-top: 45vh;
 
-    background-color: lavender;
-    box-shadow: 0px 15px 15px grey;
+    background-color: var(--backg-col);
+    /* background-color: red; */
+    
+}
+
+#headerShadow {
+    box-shadow: 0px 15px 15px -15px grey;
+
+    position: absolute;
+    width: 140%;
+    height: 100%;
+
+    margin-left: -20%;
+
+    /* background-color: blue; */
+
+}
+
+#darkVSlightMode {
+    position: absolute;
+    right: 50px;
+
+    top: 7.5%;
+
+    height: 85%;
+    width: auto;
+
+    /* Remove styles for button */
+    font-size: 100%;
+    font-family: inherit;
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--backg-col);
+    filter: brightness(85%);
+
+    border-radius: 20px;
+}
+#darkVSlightMode:hover {
+    filter: brightness(55%);
+}
+#darkVSlightMode > img {
+    height: 100%;
+    width: auto;
 }
 
 #headerText {
     font-size: 4em;
+    color: var(--text-col);
 
     margin-left: 25px;
 }
@@ -35,8 +87,8 @@ body{
     padding-top: 100px;
     width: 100%;
 
-    background-color: lavender;
-    box-shadow: 0 0 100px 200px lavender;
+    background-color: var(--backg-col);
+    box-shadow: 0 0 100px 200px var(--backg-col);
 
     /* position: absolute;
     top: 45vh; */
@@ -47,8 +99,10 @@ body{
 #tilesFlex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
+
+    margin: auto;
 }
 
 
@@ -107,7 +161,7 @@ body{
     position: absolute;
 }
 
-#backButton {
+.backButton {
     position: absolute;
     right: 20px;
     top: 20px;
