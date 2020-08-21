@@ -1,7 +1,9 @@
 
 :root {
     --backg-col: lavender;
+    --header-shadow-col: darkgrey;
     --text-col: midnightblue;
+    --show-shadow: 1;
 }
 
 body {
@@ -16,26 +18,50 @@ body {
     width: 100%;
  
     position: sticky;
-    z-index: 1;
     top: 0;
     left: 0;
     margin-top: 45vh;
-
-    background-color: var(--backg-col);
-    /* background-color: red; */
-    
 }
 
-#headerShadow {
-    box-shadow: 0px 15px 15px -15px grey;
+#headerCont {
+    /* background-color: var(--backg-col); */
 
+    background-color: brown;
+
+}
+
+#shadowDady {
     position: absolute;
-    width: 140%;
-    height: 100%;
+    width: 100%;
+    height: calc(100% + 50px);
+    top: -50px;
 
+    background-color: yellow;
+    opacity: .5;
+
+}
+#headerShadow {
+    --shad: 25px;
+    box-shadow: 0px calc(var(--shad) - 5px) var(--shad) calc(-1* var(--shad)) var(--header-shadow-col);
+
+    position: sticky;
+    top: -1px; /* adjust for some missalignment */
+
+    /* make the shadow go to edges */
+    width: 140%;
     margin-left: -20%;
 
-    /* background-color: blue; */
+    /* adjust for parent growth */
+    height: calc(100% - 50px);
+    /* put behind header */
+    /* z-index: -1; */
+
+
+    opacity: var(--show-shadow);
+
+    background-color: blue;
+    opacity: .5;
+
 
 }
 

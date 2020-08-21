@@ -9,9 +9,13 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 </head>
 <body>
-    <div id="header"><div id="headerShadow"></div>
-        <h1 id="headerText">Unimportant Test Header Text</h1>
-        <button id="darkVSlightMode" onclick="goingDark(true)"><img src="moon.svg" alt="Dark Mode"></button>
+    
+    <div id="header">
+        <div id="shadowDady"><div id="headerShadow"></div></div>
+        <div id="headerCont">
+            <h1 id="headerText">Unimportant Test Header Text</h1>
+            <button id="darkVSlightMode" onclick="goingDark(true)"><img src="moon.svg" alt="Dark Mode"></button>
+        </div>
     </div>
     <img src="float-header.webp" alt="Floating Header Background" id="floatingHeaderImage"/>
     <div id="main-page" >
@@ -49,28 +53,43 @@
             // this breakes reflow
             // we should convert on click then animate
 
-            var elements = document.querySelectorAll(".Tile");
-            let positsx = []
-            let positsy = []
-            Array.prototype.forEach.call(elements, function(el, i){
-                positsx[i] = el.offsetLeft
-                positsy[i] = el.offsetTop
-                // let cssNow = {
-                //     "position": "absolute",
-                //     "top": el.offsetTop+"px",
-                //     "left": el.offsetLeft+"px"
-                // }
-                // el.style.position = "absolute"
-                // el.style.position = "absolute"
-            });
-            Array.prototype.forEach.call(elements, function(el, i){
-                el.style.position = "absolute"
-                el.style.top = positsy[i]+"px"
-                el.style.left = positsx[i]+"px"
-            });
+            // var elements = document.querySelectorAll(".Tile");
+            // let positsx = []
+            // let positsy = []
+            // Array.prototype.forEach.call(elements, function(el, i){
+            //     positsx[i] = el.offsetLeft
+            //     positsy[i] = el.offsetTop
+            //     // let cssNow = {
+            //     //     "position": "absolute",
+            //     //     "top": el.offsetTop+"px",
+            //     //     "left": el.offsetLeft+"px"
+            //     // }
+            //     // el.style.position = "absolute"
+            //     // el.style.position = "absolute"
+            // });
+            // Array.prototype.forEach.call(elements, function(el, i){
+            //     el.style.position = "absolute"
+            //     el.style.top = positsy[i]+"px"
+            //     el.style.left = positsx[i]+"px"
+            // });
             
+            sup("headerCont")
+            sup("shadowDady")
+
         }
-        //setup()
+        function sup(namee){
+            let dad = document.getElementById(namee)
+            up(dad,"1")
+            let els = dad.getElementsByTagName("*")
+            Array.prototype.forEach.call(els, function(el, i){
+                up(el,"1")
+            });
+        }
+        function up(el,s){
+            el.style.zIndex = s
+            el.style.position = "relative"
+        }
+        setup()
 
         let on = false
         function go(el) {
@@ -94,6 +113,8 @@
 
         let darksideVslightside = {
             '--backg-col': ['darkslategrey', 'lavender'],
+            '--show-shadow': ['1', '1'],
+            '--header-shadow-col': ['black', 'black'],
             '--text-col': ['mintcream', 'midnightblue']
         }
 
